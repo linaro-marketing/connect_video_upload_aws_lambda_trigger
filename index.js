@@ -2,7 +2,7 @@ const https = require("https");
 
 const doPostRequest = event => {
   const session_id = event.Records[0].s3.object.key.match(
-    /BUD20-[A-Za-z]*[0-9]+K*[0-9]*/g
+    /[A-Za-z]{3}[0-9]{2}-[A-Za-z]*[0-9]+K*[0-9]*/g
   )[0];
 
   return new Promise((resolve, reject) => {
